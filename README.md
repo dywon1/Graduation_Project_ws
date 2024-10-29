@@ -36,18 +36,24 @@
 ```plaintext
 Graduation_Project_ws/
 ├── src/
-│   ├── stairs_detection/                          # 계단 인식 및 거리 계산 노드
-│   │   └── dis_estimate.py                        # 딥스카메라로 계단 거리 계산
-│   │   └── real_time_detection_closest.py         # 딥러닝 학습 모델 기반 실시간 계단 인식 및 거리 계산
-│   ├── cmd_control/                               # 키보드 입력을 통한 제어
-│   │   └── keyboard_controller.py                 # WASD 키보드 컨트롤러
-│   ├── motor_control/                             # 아두이노 제어 코드
-│   │   └── motor_control.ino                      # 모터 및 실린더 제어
-│   └── mapping/                                   # RTAB-Map을 활용한 SLAM 노드
-│       └── mapping_node.py                        # Visual SLAM 노드
-├── README.md                                      # 프로젝트 개요
-└── setup.py                                       # ROS2 패키지 설정
-```
+│   ├── cmd_vel_to_serial/                          # 이동 명령을 아두이노로 전송하는 패키지
+│   │   └── keyboard_controller.py                  # WASD 키보드 컨트롤러
+│   │   └── cmd_vel_to_serial_node.py               # 이동 명령을 시리얼 통신으로 변환
+│   ├── imu_tools/                                  # IMU 데이터를 처리하는 패키지
+│   │   └── imu_filter.py                           # IMU 필터링 및 데이터 처리 노드
+│   ├── navigation2/                                # ROS2 네비게이션 패키지
+│   │   └── nav2_params.yaml                        # 네비게이션 파라미터 설정 파일
+│   ├── realsense-ros/                              # RealSense 카메라 드라이버 패키지
+│   │   └── rs_launch.py                            # RealSense D435i 카메라 드라이버 실행 파일
+│   ├── rtabmap_ros/                                # RTAB-Map 기반의 SLAM 패키지
+│   │   └── rtabmap.launch.py                       # SLAM 및 로컬라이제이션 실행 파일
+│   │   └── localization.launch.py                  # 로컬라이제이션 모드 실행 파일
+│   ├── stairs_detection/                           # 계단 인식 및 거리 계산 패키지
+│   │   └── dis_estimate.py                         # 깊이 카메라를 사용한 거리 계산 노드
+│   │   └── real_time_detection_closest.py          # 실시간 계단 인식 및 거리 계산 노드
+├── README.md                                       # 프로젝트 개요 및 설명 파일
+└── setup.py                                        # ROS2 패키지 설정 파일
+'''
 
 
 
@@ -77,10 +83,7 @@ Graduation_Project_ws/
 
 1. **딥스카메라 드라이버 활성화**
    - **명령어**: `ros2 launch realsense2_camera rs_launch.py`
-   - **기능**: RealSense D435i 깊이 카메라 활성화로 장애물 검출 및 거리 계산 수행
-   - **문제점**: 카메라가 38cm 이상의 거리에서 인식 성능 저하
-   - **해결 방법**: 바운딩 박스 크기 비율을 이용하여 38cm 이상의 거리에서도 계단을 인식할 수 있도록 개선
-
+   - **기능**: RealSense D435i 깊이 카메라의 RGB-D 데이터 사용 가능, 내장 IMU 사용 가능
 
 
 
@@ -103,7 +106,7 @@ Graduation_Project_ws/
 4. **SLAM 맵핑**
    - **명령어**: `ros2 launch rtabmap_launch rtabmap.launch.py`
    - **목적**: SLAM을 통해 실내 환경을 맵핑하여 로봇의 경로 계획과 장애물 회피 성능 강화
-   - **문제점**: CPU만으로 처리 시 렉 발생
+   - **문제점**: 미니PC 사양 상 GPU가 없어 CPU만으로 처리 시 렉 발생
    - **해결 방법**: 프레임 수, 키프레임 간 이동 거리, 특징점 계산 수를 최적화하여 CPU 성능 개선
 
 
