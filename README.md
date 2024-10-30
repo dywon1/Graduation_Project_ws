@@ -148,6 +148,31 @@ Graduation_Project_ws/
 ---
 
 
+---
+
+### 개인 기여도
+
+- **설계 (100%)**  
+  - Solidworks를 사용하여 모빌리티 상체, 하체, 바퀴, 전동실린더 및 DC 모터 등 전체 설계를 수행했습니다.
+  - 계단을 오를 수 있는 모터 토크와 실린더에 필요한 토크를 계산하고, 모빈(MOBINN) 모빌리티를 참고해 1/2배 스케일로 모빌리티와 계단을 설계했습니다.
+
+- **배선 (70%)**  
+  - 초기 전원 공급 설계 및 배선 최적화를 담당했습니다. (42000mAh 배터리와 LiPo 배터리를 활용한 전원 공급)
+  - 모드 변경 푸쉬버튼 배선과 함께 전선 두께, 터미널 블록, XT60 단자, 모터 드라이버 등 모든 배선 구성과 부품을 선정하였습니다.
+
+- **소프트웨어 (90%)**  
+  - 자율주행과 계단 오르기 모드 구현을 위한 전체 코드를 작성했습니다.
+  - 4개의 바퀴 모터 제어를 위한 아두이노 코드에서 팀원이 작성한 초안을 바탕으로 수정하여 최종 코드를 완성하였습니다.
+  - 팀원과 협력하여 네비게이션과 제어 알고리즘을 개선하고 최적화했습니다.
+
+### 작업 기간
+
+- **프로젝트 작업 기간**: 2024년 6월 ~ 2024년 9월  
+  - 설계, 배선, 소프트웨어 개발, 최종 테스트 및 최적화까지 모든 과정에서 주도적으로 기여했습니다.
+
+---
+
+
 
 
 
@@ -165,13 +190,16 @@ Graduation_Project_ws/
 ![image](https://github.com/user-attachments/assets/c7f928da-629e-4b5e-a22c-dad3343324ee)
 ![image](https://github.com/user-attachments/assets/32ad4fce-f387-4667-8f54-efa4e67cc4e8)
 
+### 졸업작품 전시회 때 사용한 시현영상 
+https://www.canva.com/design/DAGTjpl8hvw/EvOiyx7yJjSH8vVQ7KlFNw/edit?utm_content=DAGTjpl8hvw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 
 ---
 
 ## 📬 연락처
 
-- Email: [your-email@example.com](mailto:your-email@example.com)
-- GitHub: [GitHub Profile](https://github.com/yourusername)
-- LinkedIn: [LinkedIn Profile](https://linkedin.com/in/yourusername)
+- Email: [wdy9876@koreatech.ac.kr](mailto:your-email@example.com)
 
 ```
+
+
